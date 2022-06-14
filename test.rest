@@ -1,0 +1,56 @@
+@url = http://localhost:4800
+
+GET {{url}}/posts
+
+###
+
+POST {{url}}/posts
+Content-Type: application/json
+
+  {
+   
+    "description": "added from server.",
+    "image": "./assets/mexico.jpg"
+  
+    
+  }
+
+###
+
+PUT {{url}}/posts
+Content-Type:application/json
+
+
+{
+    "id":"14",
+    "description": "14 is updated",
+    "image": "image updated"
+  
+
+}
+
+
+###
+DELETE {{url}}/posts/2
+# Content-Type: application/json
+
+
+###
+GET {{url}}/posts/6
+
+###
+
+POST {{url}}/uploads
+Content-Type: multipart/form-data; boundary=imageboundary
+
+--imageboundary
+Content-Disposition: form-data; name="img"; filename="img1.jpeg"
+// the name file is the name assigned in the html 
+Content-Type: img1/jpg
+
+< ./img1.jpeg
+--imageboundary--
+
+
+
+
